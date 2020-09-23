@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
+
     android:background="#ffffff"
     android:layout_height="match_parent">
   <ImageView
       android:id="@+id/photo"
       android:layout_width="0dp"
       android:layout_height="300dp"
-      android:scaleType="fitCenter"
+      android:scaleType="centerCrop"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent"
@@ -19,6 +19,8 @@
       android:text="Product Detail"
       android:textColor="#000000"
       android:textSize="24sp"
+      android:layout_marginTop="16dp"
+      android:layout_marginLeft="16dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       app:layout_constraintLeft_toLeftOf="parent"
@@ -28,5 +30,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="SEE IF IT'S  AVAILABLE"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/product_name"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

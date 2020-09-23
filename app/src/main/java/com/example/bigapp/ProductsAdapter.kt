@@ -10,11 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bigapp.model.Product
 import com.squareup.picasso.Picasso
 
-class ProductsAdapter(private val products:ArrayList<Product>):RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
+class ProductsAdapter(private val products:List<Product>):RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ProductsAdapter.ViewHolder, position: Int) {
         Picasso.get().load(products[position].photoUrl).into(holder.image)
         holder.name_product.text=products[position].title
-        holder.price.text=products[position].price
+        holder.price.text=products[position].price.toString()
+        if(products[position].isOnSales){
+            holder.isOnSales.visibility=View.VISIBLE
+        }else{
+            holder.isOnSales.visibility=View.GONE
+        }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row,parent,false)
@@ -22,6 +27,7 @@ class ProductsAdapter(private val products:ArrayList<Product>):RecyclerView.Adap
         view.setOnClickListener{
             val intent = Intent(parent.context,ProductDetails::class.java)
             intent.putExtra("title",products[holder.adapterPosition].title)
+            intent.putExtra("imagen",products[holder.adapterPosition].photoUrl)
             parent.context.startActivity(intent)
         }
         return  holder
@@ -31,5 +37,6 @@ class ProductsAdapter(private val products:ArrayList<Product>):RecyclerView.Adap
         val image:ImageView = itemView.findViewById(R.id.photo)
         val name_product:TextView = itemView.findViewById(R.id.title)
         val price:TextView=itemView.findViewById(R.id.price)
+        val isOnSales:ImageView = itemView.findViewById(R.id.salesImageView)
     }
 }
