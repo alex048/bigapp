@@ -4,16 +4,24 @@
    <group android:checkableBehavior="single">
        <item
            android:id="@+id/item1"
-           android:title="Item" />
+           android:icon="@drawable/ic_baseline_home_24"
+           android:title="Inicio" />
        <item
            android:id="@+id/item2"
-           android:title="Item" />
+           android:icon="@drawable/ic_baseline_all_inbox_24"
+           android:title="Servicios" />
        <item
            android:id="@+id/item3"
-           android:title="Item" />
+           android:icon="@drawable/ic_baseline_local_shipping_24"
+           android:title="Ordenes" />
        <item
            android:id="@+id/item4"
-           android:title="Item" />
+           android:icon="@drawable/ic_baseline_search_24"
+           android:title="Search" />
+       <item
+           android:id="@+id/item5"
+           android:icon="@drawable/ic_baseline_post_add_24"
+           android:title="Admin" />
    </group>
 
 </menu>

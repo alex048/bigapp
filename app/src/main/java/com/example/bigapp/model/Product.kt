@@ -8,7 +8,7 @@ class Product (
     @SerializedName("photo_url")
     val photoUrl:String,
     @SerializedName("price")
-    val price:Number,
+    val price:Double?,
     @SerializedName("isOnSale")
     val isOnSales:Boolean
 )
